@@ -110,11 +110,12 @@
       font-weight: 600;
       letter-spacing: .025em;
       cursor: pointer;
-      transition: all .3s ease;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
       text-decoration: none;
       border: none;
       position: relative;
       overflow: hidden;
+      will-change: transform;
     }
 
     .btn-primary {
@@ -125,18 +126,20 @@
     .btn-primary::after {
       content: '';
       position: absolute;
-      top: 0; left: -150%;
+      top: 0; left: 0;
       width: 60%;
       height: 100%;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent);
+      transform: translateX(-250%);
       animation: shimmer 3.5s ease-in-out infinite;
+      will-change: transform;
     }
-    @keyframes shimmer { 0%{left:-150%} 50%,100%{left:200%} }
+    @keyframes shimmer { 0%{transform:translateX(-250%)} 50%,100%{transform:translateX(400%)} }
 
     .btn-primary:hover {
       background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
       box-shadow: 0 6px 32px rgba(107,58,42,.52);
-      transform: translateY(-2px);
+      transform: translateY(-2px) translateZ(0);
     }
 
     .btn-outline {
@@ -156,7 +159,8 @@
       top: 0; left: 0; right: 0;
       z-index: 1000;
       padding: 22px 0;
-      transition: all .4s ease;
+      transition: padding .4s ease, background .4s ease, border-color .4s ease;
+      will-change: padding;
     }
     .nav.scrolled {
       padding: 13px 0;
@@ -274,8 +278,10 @@
     .orb {
       position: absolute;
       border-radius: 50%;
-      filter: blur(90px);
+      filter: blur(70px);
       mix-blend-mode: screen;
+      will-change: transform;
+      transform: translateZ(0);
     }
     .orb-1 {
       width: 700px; height: 420px;
@@ -296,13 +302,13 @@
       animation: drift1 22s ease-in-out infinite reverse;
     }
     @keyframes drift1 {
-      0%,100% { transform:translate(0,0); }
-      33% { transform:translate(40px,-28px); }
-      66% { transform:translate(-18px,20px); }
+      0%,100% { transform:translate3d(0,0,0); }
+      33% { transform:translate3d(40px,-28px,0); }
+      66% { transform:translate3d(-18px,20px,0); }
     }
     @keyframes drift2 {
-      0%,100% { transform:translate(0,0); }
-      50% { transform:translate(-30px,-38px); }
+      0%,100% { transform:translate3d(0,0,0); }
+      50% { transform:translate3d(-30px,-38px,0); }
     }
 
     .hero-body { position:relative; z-index:2; max-width:680px; }
@@ -319,6 +325,7 @@
       margin-bottom: 1.4rem;
       opacity: 0;
       animation: fadeUp .8s ease .2s forwards;
+      will-change: opacity, transform;
     }
     .hero-tag::before { content:''; width:28px; height:1px; background:var(--accent-l); }
 
@@ -339,8 +346,9 @@
       margin-left: 3px;
       vertical-align: middle;
       animation: blink .85s ease-in-out infinite;
+      will-change: opacity;
     }
-    .cursor.off { display: none; }
+    .cursor.off { opacity: 0; animation: none; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
     .hero-p {
@@ -352,6 +360,7 @@
       margin-bottom: 2.5rem;
       opacity: 0;
       animation: fadeUp .8s ease .45s forwards;
+      will-change: opacity, transform;
     }
     .hero-cta {
       display: flex;
@@ -359,6 +368,7 @@
       flex-wrap: wrap;
       opacity: 0;
       animation: fadeUp .8s ease .65s forwards;
+      will-change: opacity, transform;
     }
 
     .hero-scroll-ind {
@@ -382,14 +392,22 @@
     .scroll-bar {
       width: 1px;
       height: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .scroll-bar::after {
+      content: '';
+      position: absolute;
+      inset: 0;
       background: linear-gradient(to bottom, var(--accent-l), transparent);
+      transform: translateY(-100%);
       animation: scrollAnim 2s ease-in-out infinite;
+      will-change: transform;
     }
     @keyframes scrollAnim {
-      0%   { transform:scaleY(0); transform-origin:top; }
-      49%  { transform:scaleY(1); transform-origin:top; }
-      50%  { transform:scaleY(1); transform-origin:bottom; }
-      100% { transform:scaleY(0); transform-origin:bottom; }
+      0%   { transform: translateY(-100%); }
+      50%  { transform: translateY(0%); }
+      100% { transform: translateY(100%); }
     }
 
     /* ===================== STATS ===================== */
@@ -445,9 +463,10 @@
       border-top: 2px solid var(--accent);
       border-radius: 3px;
       padding: 40px 34px 36px;
-      transition: all .35s ease;
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
       position: relative;
       overflow: hidden;
+      will-change: transform;
     }
     .svc-card::before {
       content: '';
@@ -499,7 +518,7 @@
       display: flex;
       gap: 18px;
       align-items: flex-start;
-      transition: all .3s ease;
+      transition: box-shadow .3s ease, border-color .3s ease;
     }
     .why-item:hover {
       border-color: var(--border);
@@ -535,7 +554,8 @@
       border-radius: 3px;
       padding: 38px 30px 34px;
       position: relative;
-      transition: transform .3s;
+      transition: transform .3s ease;
+      will-change: transform;
     }
     .price-card.feat {
       border-color: var(--accent);
@@ -673,10 +693,12 @@
     .f-submit::after {
       content: '';
       position: absolute;
-      top: 0; left: -150%;
+      top: 0; left: 0;
       width: 60%; height: 100%;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+      transform: translateX(-250%);
       animation: shimmer 3s ease-in-out infinite;
+      will-change: transform;
     }
     .f-submit:hover { box-shadow: 0 8px 28px rgba(107,58,42,.42); transform: translateY(-2px); }
 
@@ -765,9 +787,14 @@
     .rv {
       opacity: 0;
       transform: translateY(28px);
-      transition: opacity .7s ease, transform .7s ease;
+      transition: opacity .65s ease, transform .65s ease;
+      will-change: opacity, transform;
     }
-    .rv.vis { opacity:1; transform:translateY(0); }
+    .rv.vis {
+      opacity: 1;
+      transform: translateY(0);
+      will-change: auto;
+    }
     .d1 { transition-delay:.1s; }
     .d2 { transition-delay:.2s; }
     .d3 { transition-delay:.3s; }
