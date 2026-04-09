@@ -36,6 +36,8 @@
       --br:       #3D1C08;   /* dark brown */
       --br-m:     #5A2A0E;   /* mid brown – borders/accents */
       --br-l:     #7A3A14;   /* lighter brown – hover */
+      --btn:      #7B0E0E;   /* dark red – buttons */
+      --btn-h:    #9A1212;   /* darker crimson – button hover */
       --text:     #DDD3C6;   /* warm off-white */
       --muted:    #857B72;
       --faint:    #464039;
@@ -123,15 +125,15 @@
     }
 
     .btn-primary {
-      background: var(--br-m);
+      background: var(--btn);
       color: var(--text);
-      border: 1px solid var(--br-m);
+      border: 1px solid var(--btn);
     }
     .btn-primary:hover {
-      background: var(--br-l);
-      border-color: var(--br-l);
+      background: var(--btn-h);
+      border-color: var(--btn-h);
       transform: translateY(-2px) translateZ(0);
-      box-shadow: 0 6px 24px rgba(90,42,14,.35);
+      box-shadow: 0 6px 24px rgba(123,14,14,.4);
     }
 
     .btn-outline {
@@ -675,13 +677,13 @@
       transform: translateY(-1px);
     }
     .cta-fill {
-      background: var(--br-m);
-      border: 1px solid var(--br-m);
+      background: var(--btn);
+      border: 1px solid var(--btn);
       color: var(--text);
     }
     .cta-fill:hover {
-      background: var(--br-l);
-      border-color: var(--br-l);
+      background: var(--btn-h);
+      border-color: var(--btn-h);
       transform: translateY(-1px);
     }
 
@@ -761,9 +763,9 @@
     .f-submit {
       width: 100%;
       padding: 14px;
-      background: var(--br-m);
+      background: var(--btn);
       color: var(--text);
-      border: 1px solid var(--br-m);
+      border: 1px solid var(--btn);
       font-family: 'Barlow', sans-serif;
       font-size: .85rem;
       font-weight: 700;
@@ -787,8 +789,8 @@
     }
     @keyframes shimmer { 0%{transform:translateX(-250%)} 50%,100%{transform:translateX(400%)} }
     .f-submit:hover {
-      background: var(--br-l);
-      border-color: var(--br-l);
+      background: var(--btn-h);
+      border-color: var(--btn-h);
       transform: translateY(-1px);
       box-shadow: 0 4px 18px rgba(90,42,14,.3);
     }
