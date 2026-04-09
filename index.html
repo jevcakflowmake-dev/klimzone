@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KlimZone – Klimatizace, montáž a servis | klimzone.cz</title>
-  <meta name="description" content="KlimZone – profesionální prodej, montáž a servis klimatizací na klíč. Rychle, spolehlivě, bez starostí. Poptejte nezávazně.">
-  <meta property="og:title" content="KlimZone – Klimatizace na klíč">
-  <meta property="og:description" content="Prodej, montáž a servis klimatizací. Rychlá instalace do 48 h, záruční i pozáruční servis.">
+  <title>KlimZone – E-shop klimatizace, montáž a servis | klimzone.cz</title>
+  <meta name="description" content="Největší výběr klimatizací online. Prodej, montáž a servis – Samsung, Daikin, LG, Mitsubishi. Doručení skladem, montáž do 48 h.">
+  <meta property="og:title" content="KlimZone – E-shop klimatizace">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://klimzone.cz">
-  <meta property="og:image" content="https://klimzone.cz/og.jpg">
   <meta name="theme-color" content="#0A0A09">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,1018 +15,814 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-    html {
-      scroll-behavior: smooth;
-      scrollbar-width: thin;
-      scrollbar-color: #4A2510 #0A0A09;
-    }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0A0A09; }
-    ::-webkit-scrollbar-thumb { background: #3D1C08; border-radius: 0; }
+    html { scroll-behavior:smooth; scrollbar-width:thin; scrollbar-color:#4a1010 #0a0a09; }
+    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0a0a09}::-webkit-scrollbar-thumb{background:#4a1010}
 
     :root {
-      --bg:       #0A0A09;
-      --bg2:      #0F0E0C;
-      --bg3:      #151311;
-      --bg4:      #1C1916;
-      --br:       #3D1C08;   /* dark brown */
-      --br-m:     #5A2A0E;   /* mid brown – borders/accents */
-      --br-l:     #7A3A14;   /* lighter brown – hover */
-      --btn:      #7B0E0E;   /* dark red – buttons */
-      --btn-h:    #9A1212;   /* darker crimson – button hover */
-      --text:     #DDD3C6;   /* warm off-white */
-      --muted:    #857B72;
-      --faint:    #464039;
-      --line:     rgba(90,42,14,.4);
-      --line-s:   rgba(221,211,198,.065);
+      --bg:     #0A0A09;
+      --bg2:    #0F0E0C;
+      --bg3:    #141210;
+      --bg4:    #1A1714;
+      --card:   #131110;
+      --red:    #7B0E0E;
+      --red-h:  #9A1212;
+      --red-d:  #4a0808;
+      --br:     #3D1C08;
+      --br-l:   #6B3418;
+      --text:   #DDD3C6;
+      --muted:  #857B72;
+      --faint:  #464039;
+      --green:  #2a6a3a;
+      --line:   rgba(221,211,198,.07);
+      --line2:  rgba(123,14,14,.3);
     }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Barlow', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+    body { background:var(--bg); color:var(--text); font-family:'Barlow',sans-serif; font-size:15px; line-height:1.55; overflow-x:hidden; }
 
-    /* ── TYPOGRAPHY ── */
-    h1,h2,h3,h4 {
-      font-family: 'Barlow', sans-serif;
-      line-height: 1.1;
-      font-weight: 700;
-    }
+    a { text-decoration:none; color:inherit; }
+    img { max-width:100%; display:block; }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: .7rem;
-      font-weight: 600;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--br-l);
-      margin-bottom: .85rem;
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--red-d);
+      padding: 7px 0;
+      font-size:.76rem;
+      font-weight:500;
+      letter-spacing:.03em;
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
-    .eyebrow::before {
-      content: '';
-      width: 22px;
-      height: 2px;
-      background: var(--br-m);
-      flex-shrink: 0;
-    }
+    .topbar-inner { display:flex; justify-content:space-between; align-items:center; }
+    .topbar-msg { color:rgba(221,211,198,.7); }
+    .topbar-msg strong { color:var(--text); }
+    .topbar-links { display:flex; gap:18px; }
+    .topbar-links a { color:rgba(221,211,198,.55); transition:color .2s; }
+    .topbar-links a:hover { color:var(--text); }
 
-    .sec-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(1.9rem, 3vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -.01em;
-      color: var(--text);
-      margin-bottom: .85rem;
-      text-transform: uppercase;
-    }
-
-    .sec-sub {
-      font-size: 1rem;
-      color: var(--muted);
-      font-weight: 400;
-      line-height: 1.7;
-      max-width: 500px;
-      margin-bottom: 3rem;
-    }
-
-    /* ── LAYOUT ── */
-    .wrap { width:100%; max-width:1160px; margin:0 auto; padding:0 28px; }
-    section { padding: 90px 0; }
-    .sec-sep { height: 1px; background: var(--line-s); }
-
-    /* ── BUTTONS ── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 26px;
-      font-family: 'Barlow', sans-serif;
-      font-size: .88rem;
-      font-weight: 600;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: transform .22s ease, box-shadow .22s ease, background .22s ease, border-color .22s ease, color .22s ease;
-      text-decoration: none;
-      border: none;
-      position: relative;
-      overflow: hidden;
-      will-change: transform;
-    }
-
-    .btn-primary {
-      background: var(--btn);
-      color: var(--text);
-      border: 1px solid var(--btn);
-    }
-    .btn-primary:hover {
-      background: var(--btn-h);
-      border-color: var(--btn-h);
-      transform: translateY(-2px) translateZ(0);
-      box-shadow: 0 6px 24px rgba(123,14,14,.4);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--line-s);
-    }
-    .btn-outline:hover {
-      border-color: var(--br-m);
-      color: var(--text);
-      transform: translateY(-2px) translateZ(0);
-    }
-
-    /* ── NAVIGATION ── */
-    .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      padding: 20px 0;
-      transition: padding .35s ease, background .35s ease, border-color .35s ease;
-    }
-    .nav.scrolled {
-      padding: 12px 0;
-      background: rgba(10,10,9,.97);
-      border-bottom: 1px solid var(--line-s);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      font-size: 1.5rem;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .nav-logo em { color: var(--br-l); font-style: normal; }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: .82rem;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-
-    .nav-burger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .nav-burger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--text);
-      transition: all .3s;
-    }
-
-    /* Mobile menu */
-    .mob-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
+    /* ── MAIN NAV ── */
+    .mainnav {
       background: var(--bg2);
-      z-index: 998;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 24px;
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:900;
     }
-    .mob-menu.open { display: flex; }
-    .mob-close {
-      position: absolute;
-      top: 20px; right: 24px;
-      background: none;
-      border: none;
-      color: var(--text);
-      font-size: 1.6rem;
-      cursor: pointer;
+    .mainnav-inner {
+      display:grid;
+      grid-template-columns: auto 1fr auto;
+      align-items:center;
+      gap:20px;
+      padding:14px 0;
     }
-    .mob-menu a {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      color: var(--text);
-      text-decoration: none;
-      transition: color .2s;
+    .shop-logo {
+      font-family:'Barlow Condensed',sans-serif;
+      font-weight:800;
+      font-size:1.6rem;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      white-space:nowrap;
     }
-    .mob-menu a:hover { color: var(--br-l); }
+    .shop-logo em { color:var(--red-h); font-style:normal; }
+
+    .search-bar {
+      display:flex;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    .search-bar input {
+      flex:1;
+      background:transparent;
+      border:none;
+      color:var(--text);
+      font-family:'Barlow',sans-serif;
+      font-size:.88rem;
+      padding:10px 14px;
+      outline:none;
+    }
+    .search-bar input::placeholder { color:var(--faint); }
+    .search-bar button {
+      background:var(--red);
+      border:none;
+      padding:0 18px;
+      cursor:pointer;
+      transition:background .2s;
+    }
+    .search-bar button:hover { background:var(--red-h); }
+    .search-bar button svg { width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block; }
+
+    .nav-actions { display:flex;align-items:center;gap:6px; }
+    .nav-action {
+      display:flex;align-items:center;gap:6px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      background:transparent;
+      color:var(--muted);
+      font-family:'Barlow',sans-serif;
+      font-size:.78rem;
+      font-weight:600;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      cursor:pointer;
+      transition:border-color .2s,color .2s;
+      position:relative;
+    }
+    .nav-action:hover { border-color:var(--red);color:var(--text); }
+    .nav-action svg { width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round; }
+    .cart-badge {
+      position:absolute;
+      top:-6px;right:-6px;
+      background:var(--red);
+      color:#fff;
+      font-size:.62rem;
+      font-weight:700;
+      width:18px;height:18px;
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .hamburger { display:none; }
+
+    /* ── CATEGORY NAV ── */
+    .catnav {
+      background:var(--bg3);
+      border-bottom:1px solid var(--line);
+    }
+    .catnav-list {
+      display:flex;
+      list-style:none;
+      gap:0;
+    }
+    .catnav-item { position:relative; }
+    .catnav-link {
+      display:flex;
+      align-items:center;
+      gap:6px;
+      padding:13px 18px;
+      font-size:.8rem;
+      font-weight:700;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+      color:var(--muted);
+      border-right:1px solid var(--line);
+      transition:color .2s,background .2s;
+      white-space:nowrap;
+    }
+    .catnav-link:hover,.catnav-item.active .catnav-link { color:var(--text);background:rgba(123,14,14,.12); }
+    .catnav-link svg { width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0; }
+    .catnav-link.sale { color:var(--red-h); }
+    .catnav-link.sale:hover { background:rgba(123,14,14,.2); }
+
+    /* Dropdown */
+    .cat-dropdown {
+      display:none;
+      position:absolute;
+      top:100%;left:0;
+      background:var(--bg3);
+      border:1px solid var(--line);
+      border-top:2px solid var(--red);
+      min-width:220px;
+      z-index:800;
+      padding:8px 0;
+    }
+    .catnav-item:hover .cat-dropdown { display:block; }
+    .cat-dropdown a {
+      display:block;
+      padding:9px 18px;
+      font-size:.82rem;
+      color:var(--muted);
+      transition:color .2s,padding-left .2s;
+      border-bottom:1px solid transparent;
+    }
+    .cat-dropdown a:hover { color:var(--text);padding-left:24px; }
+
+    /* ── WRAP ── */
+    .wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
 
     /* ── HERO ── */
     .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: var(--bg);
-      overflow: hidden;
+      background: var(--bg2);
+      border-bottom:1px solid var(--line);
+      overflow:hidden;
+      position:relative;
     }
-
-    /* Subtle dot grid pattern */
     .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle, rgba(90,42,14,.18) 1px, transparent 1px);
-      background-size: 28px 28px;
-      pointer-events: none;
+      content:'';
+      position:absolute;inset:0;
+      background-image:radial-gradient(circle,rgba(123,14,14,.12) 1px,transparent 1px);
+      background-size:30px 30px;
+      pointer-events:none;
     }
-
-    /* Dark brown gradient wash */
     .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 80% 50%, rgba(61,28,8,.25) 0%, transparent 70%);
-      pointer-events: none;
+      content:'';
+      position:absolute;
+      right:0;top:0;bottom:0;
+      width:45%;
+      background:linear-gradient(135deg,transparent 0%,rgba(61,28,8,.15) 100%);
+      pointer-events:none;
     }
-
-    /* Vertical accent line on left */
-    .hero-line {
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 3px;
-      background: linear-gradient(to bottom, transparent 10%, var(--br-m) 40%, var(--br-m) 60%, transparent 90%);
+    .hero-inner {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:0;
+      align-items:center;
+      min-height:340px;
     }
-
-    .hero-body {
-      position: relative;
-      z-index: 2;
-      max-width: 720px;
+    .hero-content {
+      padding:60px 40px 60px 0;
+      position:relative;z-index:2;
     }
-
-    .hero-num {
-      display: block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      color: var(--br-l);
-      margin-bottom: 1.4rem;
-      opacity: 0;
-      animation: fadeUp .7s ease .15s forwards;
-      will-change: opacity, transform;
+    .hero-tag {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.7rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--red-h);
+      margin-bottom:14px;
     }
-
+    .hero-tag::before { content:'';width:20px;height:2px;background:var(--red); }
     .hero-h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.8rem, 5.5vw, 5rem);
-      font-weight: 800;
-      line-height: 1.0;
-      letter-spacing: -.01em;
-      text-transform: uppercase;
-      margin-bottom: 1.6rem;
-      min-height: 2.1em;
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:clamp(2.2rem,4vw,3.8rem);
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:-.01em;
+      line-height:1.0;
+      margin-bottom:14px;
+    }
+    .hero-h1 em { color:var(--red-h);font-style:normal;display:block; }
+    .hero-sub {
+      font-size:.96rem;
+      color:var(--muted);
+      margin-bottom:24px;
+      line-height:1.65;
+    }
+    .hero-actions { display:flex;gap:10px;flex-wrap:wrap; }
+    .btn {
+      display:inline-flex;align-items:center;gap:7px;
+      padding:12px 22px;
+      font-family:'Barlow',sans-serif;
+      font-size:.82rem;font-weight:700;
+      letter-spacing:.07em;text-transform:uppercase;
+      cursor:pointer;
+      transition:transform .22s ease,box-shadow .22s ease,background .2s,border-color .2s,color .2s;
+      border:none;
+      will-change:transform;
+    }
+    .btn-red { background:var(--red);color:var(--text);border:1px solid var(--red); }
+    .btn-red:hover { background:var(--red-h);border-color:var(--red-h);transform:translateY(-2px);box-shadow:0 5px 20px rgba(123,14,14,.35); }
+    .btn-out { background:transparent;color:var(--text);border:1px solid var(--line); }
+    .btn-out:hover { border-color:var(--red);transform:translateY(-2px); }
+
+    .hero-visual {
+      position:relative;z-index:2;
+      display:flex;align-items:center;justify-content:center;
+      padding:40px;
+    }
+    .hero-ac-art {
+      width:100%;max-width:340px;
+    }
+    .hero-promo-tags {
+      display:flex;flex-direction:column;gap:8px;
+      position:absolute;right:20px;top:30px;
+    }
+    .promo-tag {
+      background:var(--red);
+      color:#fff;
+      font-size:.7rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:5px 12px;
+      display:inline-block;
+    }
+    .promo-tag.dark { background:var(--bg4);border:1px solid var(--line); color:var(--muted); }
+
+    /* ── CATEGORY TILES ── */
+    .cat-tiles { padding:28px 0; background:var(--bg); border-bottom:1px solid var(--line); }
+    .cat-tiles-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:12px; }
+    .cat-tile {
+      display:flex;flex-direction:column;align-items:center;
+      gap:10px;
+      padding:22px 12px;
+      background:var(--bg3);
+      border:1px solid var(--line);
+      border-top:2px solid var(--br);
+      text-align:center;
+      cursor:pointer;
+      transition:border-top-color .2s,background .2s;
+    }
+    .cat-tile:hover { border-top-color:var(--red);background:var(--bg4); }
+    .cat-tile svg { width:30px;height:30px;stroke:var(--br-l);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s; }
+    .cat-tile:hover svg { stroke:var(--red-h); }
+    .cat-tile-name { font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em; }
+    .cat-tile-sub { font-size:.74rem;color:var(--muted); }
+
+    /* ── SHOP LAYOUT ── */
+    .shop-section { padding:32px 0 56px; }
+    .shop-layout {
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:24px;
+      align-items:start;
     }
 
-    .cursor {
-      display: inline-block;
-      width: 3px;
-      height: .85em;
-      background: var(--br-l);
-      margin-left: 3px;
-      vertical-align: middle;
-      animation: blink .9s ease-in-out infinite;
-      will-change: opacity;
+    /* SIDEBAR */
+    .sidebar { position:sticky;top:96px; }
+    .sidebar-block {
+      background:var(--bg3);
+      border:1px solid var(--line);
+      margin-bottom:12px;
+      overflow:hidden;
     }
-    .cursor.off { opacity: 0; animation: none; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .sidebar-head {
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 14px;
+      border-bottom:1px solid var(--line);
+      font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      cursor:pointer;
+      user-select:none;
+    }
+    .sidebar-head svg { width:12px;height:12px;stroke:var(--muted);fill:none;stroke-width:2;transition:transform .25s; }
+    .sidebar-head.open svg { transform:rotate(180deg); }
+    .sidebar-body { padding:12px 14px; }
+    .sb-item {
+      display:flex;align-items:center;gap:8px;
+      padding:5px 0;
+      font-size:.82rem;color:var(--muted);
+      cursor:pointer;
+    }
+    .sb-item input[type=checkbox] { accent-color:var(--red);width:14px;height:14px; }
+    .sb-item:hover { color:var(--text); }
+    .sb-item span.count { margin-left:auto;font-size:.72rem;color:var(--faint); }
 
-    .hero-p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      font-weight: 400;
-      max-width: 480px;
-      line-height: 1.7;
-      margin-bottom: 2.4rem;
-      opacity: 0;
-      animation: fadeUp .7s ease .4s forwards;
-      will-change: opacity, transform;
+    .price-range { padding:4px 0 8px; }
+    .price-inputs { display:flex;gap:8px;align-items:center;margin-top:10px; }
+    .price-inputs input {
+      flex:1;background:rgba(255,255,255,.03);border:1px solid var(--line);
+      color:var(--text);font-family:'Barlow',sans-serif;font-size:.82rem;
+      padding:7px 8px;outline:none;text-align:center;width:100%;
     }
+    .price-inputs input:focus { border-color:var(--red); }
+    .price-sep { color:var(--faint);font-size:.8rem; }
 
-    .hero-cta {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp .7s ease .58s forwards;
-      will-change: opacity, transform;
+    .sidebar-apply {
+      display:block;width:100%;
+      background:var(--red);border:none;color:var(--text);
+      font-family:'Barlow',sans-serif;font-size:.78rem;font-weight:700;
+      letter-spacing:.08em;text-transform:uppercase;
+      padding:10px;cursor:pointer;
+      margin-top:8px;
+      transition:background .2s;
     }
+    .sidebar-apply:hover { background:var(--red-h); }
 
-    .hero-scroll-ind {
-      position: absolute;
-      bottom: 36px; left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      opacity: 0;
-      animation: fadeIn .8s ease 2s forwards;
+    /* PRODUCTS AREA */
+    .products-area {}
+    .products-toolbar {
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 0;
+      margin-bottom:16px;
+      border-bottom:1px solid var(--line);
+      gap:12px;
+      flex-wrap:wrap;
     }
-    .hero-scroll-ind span {
-      font-size: .6rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--faint);
+    .products-count { font-size:.82rem;color:var(--muted); }
+    .products-count strong { color:var(--text); }
+    .sort-select {
+      background:var(--bg3);border:1px solid var(--line);
+      color:var(--text);font-family:'Barlow',sans-serif;font-size:.8rem;
+      padding:7px 28px 7px 10px;outline:none;cursor:pointer;
+      -webkit-appearance:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23857B72' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;background-position:right 6px center;background-size:14px;
     }
-    .scroll-bar {
-      width: 1px;
-      height: 38px;
-      position: relative;
-      overflow: hidden;
+    .active-filters { display:flex;flex-wrap:wrap;gap:6px; }
+    .filter-tag {
+      display:inline-flex;align-items:center;gap:5px;
+      padding:3px 10px;
+      background:rgba(123,14,14,.15);
+      border:1px solid rgba(123,14,14,.3);
+      font-size:.72rem;color:var(--red-h);
+      cursor:pointer;
     }
-    .scroll-bar::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, var(--br-l), transparent);
-      transform: translateY(-100%);
-      animation: scrollAnim 2s ease-in-out infinite;
-      will-change: transform;
-    }
-    @keyframes scrollAnim {
-      0%   { transform: translateY(-100%); }
-      50%  { transform: translateY(0%); }
-      100% { transform: translateY(100%); }
-    }
+    .filter-tag:hover { background:rgba(123,14,14,.25); }
 
-    /* ── STATS ── */
-    .stats {
-      padding: 0;
-      background: var(--bg2);
-      border-top: 1px solid var(--line-s);
-      border-bottom: 1px solid var(--line-s);
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .stat {
-      padding: 40px 28px;
-      position: relative;
-      text-align: center;
-    }
-    .stat:not(:last-child) {
-      border-right: 1px solid var(--line-s);
-    }
-    .stat-n {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      font-weight: 800;
-      letter-spacing: -.01em;
-      line-height: 1;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-    .stat-l {
-      font-size: .78rem;
-      color: var(--muted);
-      font-weight: 500;
-      letter-spacing: .04em;
-      text-transform: uppercase;
+    /* PRODUCT GRID */
+    .products-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
     }
 
-    /* ── SERVICES ── */
-    .services { background: var(--bg); }
+    /* PRODUCT CARD */
+    .prod-card {
+      background:var(--card);
+      border:1px solid var(--line);
+      display:flex;flex-direction:column;
+      transition:border-color .25s,box-shadow .25s;
+      position:relative;
+    }
+    .prod-card:hover {
+      border-color:rgba(123,14,14,.4);
+      box-shadow:0 4px 24px rgba(0,0,0,.4);
+    }
+    .prod-card.hidden { display:none; }
 
-    .sec-header { margin-bottom: 3rem; }
+    .prod-img {
+      height:180px;
+      background:var(--bg3);
+      border-bottom:1px solid var(--line);
+      position:relative;
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden;
+    }
+    .prod-brand-wm {
+      position:absolute;
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:2.8rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.02em;
+      color:rgba(255,255,255,.035);
+      pointer-events:none;
+      white-space:nowrap;
+    }
+    .prod-ac-svg {
+      width:160px;
+      opacity:.55;
+      z-index:1;
+    }
+    .prod-badge {
+      position:absolute;
+      top:10px;left:0;
+      background:var(--red);
+      color:#fff;
+      font-size:.62rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:4px 9px;
+      z-index:2;
+    }
+    .prod-badge.green { background:var(--green); }
+    .prod-badge.brown { background:var(--br); }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--line-s);
-      border: 1px solid var(--line-s);
+    .prod-body {
+      padding:14px;
+      display:flex;flex-direction:column;
+      flex:1;
     }
+    .prod-tags {
+      display:flex;flex-wrap:wrap;gap:4px;
+      margin-bottom:8px;
+    }
+    .prod-tag {
+      font-size:.64rem;
+      font-weight:600;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      padding:2px 7px;
+      border:1px solid var(--line);
+      color:var(--faint);
+    }
+    .prod-tag.red { border-color:rgba(123,14,14,.4);color:var(--red-h); }
+    .prod-name {
+      font-size:.88rem;
+      font-weight:600;
+      color:var(--text);
+      margin-bottom:6px;
+      line-height:1.35;
+    }
+    .prod-stock {
+      font-size:.74rem;
+      font-weight:600;
+      margin-bottom:10px;
+      display:flex;align-items:center;gap:5px;
+    }
+    .prod-stock::before {
+      content:'';
+      width:6px;height:6px;
+      border-radius:50%;
+      background:var(--green);
+      flex-shrink:0;
+    }
+    .prod-stock.out { color:var(--faint); }
+    .prod-stock.out::before { background:var(--faint); }
+    .prod-stock.in { color:#4aaa66; }
 
-    .svc-card {
-      background: var(--bg2);
-      padding: 40px 36px;
-      transition: background .25s ease;
-      position: relative;
+    .prod-price { margin-top:auto;margin-bottom:10px; }
+    .prod-price-nodph { font-size:.74rem;color:var(--muted);margin-bottom:2px; }
+    .prod-price-dph {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.5rem;
+      font-weight:800;
+      color:var(--text);
+      letter-spacing:-.01em;
+      line-height:1;
     }
-    .svc-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--br);
-      transition: background .25s ease;
+    .prod-cart-btn {
+      display:flex;align-items:center;justify-content:center;gap:7px;
+      width:100%;
+      background:var(--red);
+      border:1px solid var(--red);
+      color:#fff;
+      font-family:'Barlow',sans-serif;
+      font-size:.78rem;font-weight:700;
+      letter-spacing:.07em;text-transform:uppercase;
+      padding:11px;
+      cursor:pointer;
+      transition:background .2s,border-color .2s,transform .2s ease;
+      will-change:transform;
+      margin-top:auto;
     }
-    .svc-card:hover { background: var(--bg3); }
-    .svc-card:hover::before { background: var(--br-l); }
+    .prod-cart-btn:hover { background:var(--red-h);border-color:var(--red-h);transform:translateY(-1px); }
+    .prod-cart-btn svg { width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round; }
+    .prod-cart-btn.added { background:var(--green);border-color:var(--green); }
 
-    .svc-num {
-      display: block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .7rem;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--br-l);
-      margin-bottom: 20px;
+    /* LOAD MORE */
+    .load-more {
+      display:block;
+      text-align:center;
+      margin-top:20px;
+      padding:12px;
+      border:1px solid var(--line);
+      font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--muted);
+      cursor:pointer;
+      transition:border-color .2s,color .2s;
+      background:transparent;
+      width:100%;
+      font-family:'Barlow',sans-serif;
     }
-    .svc-icon {
-      width: 44px;
-      height: 44px;
-      border: 1px solid var(--line);
-      background: rgba(61,28,8,.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .svc-icon svg {
-      width: 20px; height: 20px;
-      stroke: var(--br-l);
-      fill: none;
-      stroke-width: 1.6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .svc-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .02em;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
-    .svc-desc {
-      font-size: .9rem;
-      color: var(--muted);
-      line-height: 1.68;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-    .svc-more {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--br-l);
-      text-decoration: none;
-      transition: gap .2s ease;
-    }
-    .svc-more:hover { gap: 12px; }
+    .load-more:hover { border-color:var(--red);color:var(--text); }
 
-    /* ── WHY US ── */
-    .why { background: var(--bg2); }
+    /* BRANDS STRIP */
+    .brands { padding:24px 0;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line); }
+    .brands-inner { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px; }
+    .brand-logo {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.1rem;font-weight:800;
+      letter-spacing:.06em;text-transform:uppercase;
+      color:var(--faint);
+      transition:color .2s;
+      padding:6px 10px;
+    }
+    .brand-logo:hover { color:var(--muted); }
 
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
+    /* USP */
+    .usp { padding:32px 0;background:var(--bg3);border-bottom:1px solid var(--line); }
+    .usp-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line); }
+    .usp-item {
+      background:var(--bg3);
+      padding:22px 18px;
+      display:flex;gap:12px;align-items:flex-start;
     }
-    .why-sticky { position: sticky; top: 100px; }
+    .usp-ico {
+      width:38px;height:38px;min-width:38px;
+      border:1px solid rgba(123,14,14,.3);
+      background:rgba(123,14,14,.08);
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;
+    }
+    .usp-ico svg { width:17px;height:17px;stroke:var(--red-h);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round; }
+    .usp-txt h4 { font-size:.82rem;font-weight:700;margin-bottom:3px; }
+    .usp-txt p { font-size:.76rem;color:var(--muted);line-height:1.45; }
 
-    .why-items { display: flex; flex-direction: column; gap: 0; }
-    .why-item {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      padding: 28px 0;
-      border-bottom: 1px solid var(--line-s);
-      transition: background .2s;
+    /* SECTION HEADING */
+    .sec-head {
+      display:flex;align-items:baseline;justify-content:space-between;
+      margin-bottom:16px;
+      padding-bottom:10px;
+      border-bottom:1px solid var(--line);
     }
-    .why-item:first-child { border-top: 1px solid var(--line-s); }
+    .sec-head-left { display:flex;align-items:baseline;gap:10px; }
+    .sec-head h2 {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.3rem;font-weight:800;
+      text-transform:uppercase;letter-spacing:.03em;
+    }
+    .sec-head .sec-head-count { font-size:.76rem;color:var(--muted); }
+    .sec-head a {
+      font-size:.76rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+      color:var(--red-h);
+      transition:color .2s;
+    }
+    .sec-head a:hover { color:var(--text); }
 
-    .why-num {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--br);
-      line-height: 1;
-      min-width: 36px;
-      padding-top: 3px;
+    /* TOAST */
+    .toast {
+      position:fixed;bottom:24px;right:24px;
+      background:var(--bg4);border:1px solid var(--line);border-left:3px solid var(--red);
+      padding:12px 16px;
+      font-size:.82rem;color:var(--text);
+      z-index:9000;
+      transform:translateY(20px);opacity:0;
+      transition:transform .3s ease,opacity .3s ease;
+      pointer-events:none;
+      max-width:280px;
     }
-    .why-txt h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .03em;
-      margin-bottom: 5px;
-    }
-    .why-txt p {
-      font-size: .88rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
+    .toast.show { transform:translateY(0);opacity:1; }
+    .toast strong { display:block;font-weight:700;margin-bottom:2px; }
+    .toast span { color:var(--muted);font-size:.76rem; }
 
-    /* ── PRICING ── */
-    .pricing { background: var(--bg); }
+    /* CART DRAWER */
+    .cart-overlay {
+      position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:950;
+      opacity:0;pointer-events:none;transition:opacity .3s;
+    }
+    .cart-overlay.open { opacity:1;pointer-events:all; }
+    .cart-drawer {
+      position:fixed;top:0;right:0;bottom:0;width:360px;
+      background:var(--bg3);border-left:1px solid var(--line);
+      z-index:960;transform:translateX(100%);
+      transition:transform .35s ease;
+      display:flex;flex-direction:column;
+    }
+    .cart-drawer.open { transform:translateX(0); }
+    .cart-head {
+      display:flex;align-items:center;justify-content:space-between;
+      padding:18px 20px;border-bottom:1px solid var(--line);
+    }
+    .cart-head h3 { font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:800;text-transform:uppercase; }
+    .cart-close { background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;line-height:1; }
+    .cart-close:hover { color:var(--text); }
+    .cart-items { flex:1;overflow-y:auto;padding:16px 20px; }
+    .cart-empty { text-align:center;color:var(--muted);padding:40px 0;font-size:.9rem; }
+    .cart-item {
+      display:flex;gap:12px;align-items:start;
+      padding:12px 0;border-bottom:1px solid var(--line);
+    }
+    .cart-item-img {
+      width:60px;height:50px;flex-shrink:0;
+      background:var(--bg4);border:1px solid var(--line);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .cart-item-img svg { width:36px;opacity:.4; }
+    .cart-item-info { flex:1; }
+    .cart-item-name { font-size:.82rem;font-weight:600;margin-bottom:3px;line-height:1.3; }
+    .cart-item-price { font-size:.82rem;color:var(--red-h);font-weight:700; }
+    .cart-item-qty {
+      display:flex;align-items:center;gap:6px;
+      margin-top:6px;
+    }
+    .qty-btn {
+      width:22px;height:22px;
+      background:var(--bg4);border:1px solid var(--line);
+      color:var(--muted);
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;font-size:.9rem;
+      transition:border-color .2s;
+    }
+    .qty-btn:hover { border-color:var(--red);color:var(--text); }
+    .qty-val { font-size:.82rem;min-width:20px;text-align:center; }
+    .cart-item-remove { background:none;border:none;color:var(--faint);cursor:pointer;font-size:1rem;padding:2px; }
+    .cart-item-remove:hover { color:var(--red-h); }
 
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--line-s);
-      border: 1px solid var(--line-s);
-      margin-bottom: 24px;
+    .cart-foot {
+      padding:16px 20px;
+      border-top:1px solid var(--line);
     }
-
-    .price-card {
-      background: var(--bg2);
-      padding: 36px 30px;
-      position: relative;
-      transition: background .25s;
+    .cart-total {
+      display:flex;justify-content:space-between;align-items:baseline;
+      margin-bottom:14px;
+      font-weight:700;
     }
-    .price-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--br);
+    .cart-total span:first-child { font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em; }
+    .cart-total span:last-child { font-family:'Barlow Condensed',sans-serif;font-size:1.4rem; }
+    .cart-checkout {
+      display:block;width:100%;
+      background:var(--red);border:1px solid var(--red);
+      color:#fff;
+      font-family:'Barlow',sans-serif;
+      font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      padding:13px;cursor:pointer;text-align:center;
+      transition:background .2s;
     }
-    .price-card.feat {
-      background: var(--bg3);
-    }
-    .price-card.feat::before { background: var(--br-l); }
-    .price-card:hover { background: var(--bg3); }
-
-    .feat-tag {
-      display: inline-block;
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--br-l);
-      border: 1px solid var(--br);
-      padding: 3px 10px;
-      margin-bottom: 18px;
-    }
-
-    .price-tier {
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--br-l);
-      margin-bottom: 8px;
-    }
-    .price-name {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .03em;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
-    .price-val {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
-      font-weight: 800;
-      color: var(--text);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .price-note {
-      font-size: .78rem;
-      color: var(--faint);
-      margin-bottom: 22px;
-    }
-    .price-divider { height: 1px; background: var(--line-s); margin-bottom: 20px; }
-
-    .price-feats {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-      margin-bottom: 28px;
-    }
-    .price-feats li {
-      display: flex;
-      align-items: baseline;
-      gap: 9px;
-      font-size: .86rem;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-    .price-feats li::before {
-      content: '—';
-      color: var(--br-m);
-      font-weight: 700;
-      flex-shrink: 0;
-      font-size: .75rem;
-    }
-
-    .price-cta {
-      display: block;
-      text-align: center;
-      padding: 12px 16px;
-      font-family: 'Barlow', sans-serif;
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background .2s, border-color .2s, color .2s, transform .2s ease;
-      will-change: transform;
-    }
-    .cta-out {
-      border: 1px solid var(--line);
-      color: var(--muted);
-    }
-    .cta-out:hover {
-      border-color: var(--br-m);
-      color: var(--text);
-      transform: translateY(-1px);
-    }
-    .cta-fill {
-      background: var(--btn);
-      border: 1px solid var(--btn);
-      color: var(--text);
-    }
-    .cta-fill:hover {
-      background: var(--btn-h);
-      border-color: var(--btn-h);
-      transform: translateY(-1px);
-    }
-
-    .pricing-note {
-      padding: 18px 22px;
-      border: 1px solid var(--line-s);
-      border-left: 3px solid var(--br-m);
-      font-size: .86rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .pricing-note strong { color: var(--text); font-weight: 600; }
-
-    /* ── CONTACT ── */
-    .contact { background: var(--bg2); }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .c-form {
-      background: var(--bg3);
-      border: 1px solid var(--line-s);
-      border-top: 2px solid var(--br-m);
-      padding: 44px 40px;
-    }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .fg { margin-bottom: 16px; }
-    .fg label {
-      display: block;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 7px;
-    }
-    .fg input, .fg textarea {
-      width: 100%;
-      background: rgba(255,255,255,.025);
-      border: 1px solid var(--line-s);
-      color: var(--text);
-      font-family: 'Barlow', sans-serif;
-      font-size: .92rem;
-      padding: 11px 14px;
-      transition: border-color .25s, background .25s, box-shadow .25s;
-      outline: none;
-    }
-    .fg input::placeholder, .fg textarea::placeholder { color: var(--faint); }
-    .fg input:focus, .fg textarea:focus {
-      border-color: var(--br-m);
-      background: rgba(61,28,8,.06);
-      box-shadow: 0 0 0 3px rgba(90,42,14,.12);
-    }
-    .fg textarea { resize: vertical; min-height: 110px; }
-
-    .f-check {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-    .f-check input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      min-width: 16px;
-      margin-top: 2px;
-      accent-color: var(--br-m);
-    }
-    .f-check label { font-size: .78rem; color: var(--faint); line-height: 1.5; }
-    .f-check label a { color: var(--br-l); text-decoration: none; }
-
-    .f-submit {
-      width: 100%;
-      padding: 14px;
-      background: var(--btn);
-      color: var(--text);
-      border: 1px solid var(--btn);
-      font-family: 'Barlow', sans-serif;
-      font-size: .85rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background .25s, border-color .25s, transform .22s ease, box-shadow .22s ease;
-      will-change: transform;
-      position: relative;
-      overflow: hidden;
-    }
-    .f-submit::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 60%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.07), transparent);
-      transform: translateX(-250%);
-      animation: shimmer 3.5s ease-in-out infinite;
-      will-change: transform;
-    }
-    @keyframes shimmer { 0%{transform:translateX(-250%)} 50%,100%{transform:translateX(400%)} }
-    .f-submit:hover {
-      background: var(--btn-h);
-      border-color: var(--btn-h);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 18px rgba(90,42,14,.3);
-    }
-
-    /* Contact info side */
-    .c-info { padding-top: 8px; }
-    .c-info-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .02em;
-      margin-bottom: 8px;
-    }
-    .c-info-sub {
-      font-size: .9rem;
-      color: var(--muted);
-      line-height: 1.65;
-      margin-bottom: 36px;
-    }
-
-    .c-detail {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line-s);
-    }
-    .c-detail:first-of-type { border-top: 1px solid var(--line-s); }
-    .c-ico {
-      width: 38px; height: 38px; min-width: 38px;
-      border: 1px solid var(--line);
-      background: rgba(61,28,8,.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .c-ico svg {
-      width: 16px; height: 16px;
-      stroke: var(--br-l); fill: none;
-      stroke-width: 1.7;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .c-detail-txt strong {
-      display: block;
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 3px;
-    }
-    .c-detail-txt a, .c-detail-txt span {
-      color: var(--text);
-      font-size: .95rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: color .2s;
-    }
-    .c-detail-txt a:hover { color: var(--br-l); }
-
-    .c-promise {
-      margin-top: 28px;
-      padding: 16px 18px;
-      border-left: 3px solid var(--br-m);
-      background: rgba(61,28,8,.1);
-      font-size: .84rem;
-      color: var(--muted);
-      font-style: italic;
-      line-height: 1.6;
-    }
+    .cart-checkout:hover { background:var(--red-h); }
 
     /* ── FOOTER ── */
-    .footer {
-      background: var(--bg2);
-      border-top: 1px solid var(--line-s);
-      padding: 56px 0 28px;
-    }
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr;
-      gap: 56px;
-      margin-bottom: 40px;
-    }
-    .f-logo {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      font-size: 1.4rem;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      color: var(--text);
-      text-decoration: none;
-      display: block;
-      margin-bottom: 14px;
-    }
-    .f-logo em { color: var(--br-l); font-style: normal; }
-    .f-desc {
-      font-size: .84rem;
-      color: var(--faint);
-      line-height: 1.72;
-      margin-bottom: 22px;
-    }
-
-    .socials { display: flex; gap: 8px; }
-    .soc {
-      width: 32px; height: 32px;
-      background: var(--bg3);
-      border: 1px solid var(--line-s);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: border-color .2s, background .2s;
-    }
-    .soc:hover { border-color: var(--br-m); background: rgba(61,28,8,.2); }
-    .soc svg {
-      width: 14px; height: 14px;
-      stroke: var(--faint); fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      transition: stroke .2s;
-    }
-    .soc:hover svg { stroke: var(--br-l); }
-
-    .f-heading {
-      font-size: .66rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-    .f-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .f-links a {
-      color: var(--faint);
-      text-decoration: none;
-      font-size: .86rem;
-      transition: color .2s;
-    }
-    .f-links a:hover { color: var(--muted); }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 24px;
-      border-top: 1px solid var(--line-s);
-    }
-    .f-copy { font-size: .76rem; color: var(--faint); }
-    .f-legal { display: flex; gap: 20px; }
-    .f-legal a { font-size: .76rem; color: var(--faint); text-decoration: none; transition: color .2s; }
-    .f-legal a:hover { color: var(--muted); }
+    .footer { background:var(--bg2);border-top:1px solid var(--line);padding:48px 0 24px; }
+    .footer-grid { display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px; }
+    .f-logo { font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:.04em;text-transform:uppercase;display:block;margin-bottom:10px; }
+    .f-logo em { color:var(--red-h);font-style:normal; }
+    .f-desc { font-size:.82rem;color:var(--faint);line-height:1.7;margin-bottom:16px; }
+    .socials { display:flex;gap:7px; }
+    .soc { width:30px;height:30px;border:1px solid var(--line);background:var(--bg3);display:flex;align-items:center;justify-content:center;transition:border-color .2s; }
+    .soc:hover { border-color:var(--red); }
+    .soc svg { width:13px;height:13px;stroke:var(--faint);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s; }
+    .soc:hover svg { stroke:var(--red-h); }
+    .f-head { font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px; }
+    .f-links { list-style:none;display:flex;flex-direction:column;gap:7px; }
+    .f-links a { font-size:.82rem;color:var(--faint);transition:color .2s; }
+    .f-links a:hover { color:var(--muted); }
+    .footer-bot { display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid var(--line);flex-wrap:wrap;gap:10px; }
+    .footer-bot-copy { font-size:.74rem;color:var(--faint); }
+    .footer-bot-links { display:flex;gap:16px; }
+    .footer-bot-links a { font-size:.74rem;color:var(--faint);transition:color .2s; }
+    .footer-bot-links a:hover { color:var(--muted); }
 
     /* ── SCROLL REVEAL ── */
-    .rv {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .6s ease, transform .6s ease;
-      will-change: opacity, transform;
-    }
-    .rv.vis { opacity: 1; transform: translateY(0); will-change: auto; }
-    .d1 { transition-delay: .1s; }
-    .d2 { transition-delay: .2s; }
-    .d3 { transition-delay: .3s; }
-    .d4 { transition-delay: .4s; }
-
-    /* ── CENTER HEADER ── */
-    .ch { text-align: center; }
-    .ch .sec-sub { margin: 0 auto 3rem; }
-    .ch .eyebrow { justify-content: center; }
-    .ch .eyebrow::before { display: none; }
-
-    /* ── UTILS ── */
-    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
-    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    .rv { opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;will-change:opacity,transform; }
+    .rv.vis { opacity:1;transform:translateY(0);will-change:auto; }
+    .d1{transition-delay:.08s}.d2{transition-delay:.15s}.d3{transition-delay:.22s}.d4{transition-delay:.3s}
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      .why-grid { grid-template-columns: 1fr; gap: 36px; }
-      .why-sticky { position: static; }
-      .contact-grid { grid-template-columns: 1fr; gap: 44px; }
-      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+    @media(max-width:1024px){
+      .shop-layout{grid-template-columns:200px 1fr}
+      .products-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+      .usp-grid{grid-template-columns:repeat(2,1fr)}
     }
-
-    @media (max-width: 768px) {
-      section { padding: 70px 0; }
-      .nav-links, .nav-cta { display: none; }
-      .nav-burger { display: flex; }
-
-      .stats-grid { grid-template-columns: repeat(2,1fr); }
-      .stat:nth-child(2) { border-right: none; }
-      .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line-s); }
-
-      .services-grid { grid-template-columns: 1fr; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .c-form { padding: 28px 22px; }
-      .footer-top { grid-template-columns: 1fr; gap: 28px; }
-      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-      .hero-cta { flex-direction: column; align-items: flex-start; }
-      .hero-scroll-ind { display: none; }
+    @media(max-width:768px){
+      .topbar-links{display:none}
+      .mainnav-inner{grid-template-columns:auto 1fr auto;gap:10px}
+      .hamburger{display:flex;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+      .hamburger span{display:block;width:20px;height:2px;background:var(--text);}
+      .catnav{display:none}
+      .catnav.mob-open{display:block}
+      .catnav-list{flex-direction:column}
+      .catnav-link{border-right:none;border-bottom:1px solid var(--line)}
+      .hero-inner{grid-template-columns:1fr}
+      .hero-visual{display:none}
+      .hero-content{padding:40px 0}
+      .cat-tiles-grid{grid-template-columns:repeat(2,1fr)}
+      .shop-layout{grid-template-columns:1fr}
+      .sidebar{position:static;display:none}
+      .sidebar.mob-open{display:block}
+      .products-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-bot{flex-direction:column;text-align:center}
+      .cart-drawer{width:100%}
+      .usp-grid{grid-template-columns:1fr}
     }
-
-    @media (max-width: 480px) {
-      .hero-h1 { font-size: 2.4rem; }
+    @media(max-width:480px){
+      .products-grid{grid-template-columns:1fr}
+      .hero-h1{font-size:2rem}
     }
   </style>
 </head>
 <body>
 
-<!-- MOBILE MENU -->
-<div class="mob-menu" id="mobMenu">
-  <button class="mob-close" onclick="closeMob()" aria-label="Zavřít">✕</button>
-  <a href="#sluzby" onclick="closeMob()">Služby</a>
-  <a href="#proc-my" onclick="closeMob()">Proč my</a>
-  <a href="#cenik" onclick="closeMob()">Ceník</a>
-  <a href="#kontakt" onclick="closeMob()">Kontakt</a>
-  <a href="#kontakt" class="btn btn-primary" style="margin-top:8px" onclick="closeMob()">Poptávka</a>
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <strong id="toast-name">Produkt přidán</strong>
+  <span>Přidáno do košíku</span>
 </div>
 
-<!-- NAVIGATION -->
-<header class="nav" id="nav">
+<!-- CART OVERLAY + DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>Košík <span id="cartHeadCount" style="color:var(--muted);font-size:.8rem;font-weight:400"></span></h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot" id="cartFoot" style="display:none">
+    <div class="cart-total">
+      <span>Celkem s DPH</span>
+      <span id="cartTotal">0 Kč</span>
+    </div>
+    <button class="cart-checkout">Přejít k pokladně →</button>
+  </div>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
   <div class="wrap">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">Klim<em>Zone</em></a>
-      <nav aria-label="Hlavní navigace">
-        <ul class="nav-links">
-          <li><a href="#sluzby">Služby</a></li>
-          <li><a href="#proc-my">Proč my</a></li>
-          <li><a href="#cenik">Ceník</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-      </nav>
-      <div class="nav-right">
-        <a href="#kontakt" class="btn btn-primary nav-cta">Nezávazná poptávka</a>
-        <button class="nav-burger" onclick="openMob()" aria-label="Menu">
+    <div class="topbar-inner">
+      <span class="topbar-msg"><strong>Doprava zdarma</strong> nad 3 000 Kč &nbsp;|&nbsp; Montáž do <strong>48 h</strong> od objednávky</span>
+      <div class="topbar-links">
+        <a href="tel:+420800123456">📞 +420 800 123 456</a>
+        <a href="mailto:info@klimzone.cz">info@klimzone.cz</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN NAV -->
+<header class="mainnav" id="mainnav">
+  <div class="wrap">
+    <div class="mainnav-inner">
+      <a href="#" class="shop-logo">Klim<em>Zone</em></a>
+
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Hledat klimatizaci, značku, výkon…" oninput="filterProducts()">
+        <button aria-label="Hledat">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </div>
+
+      <div class="nav-actions">
+        <button class="nav-action" onclick="openCart()" aria-label="Košík">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span>Košík</span>
+          <div class="cart-badge" id="cartBadge" style="display:none">0</div>
+        </button>
+        <button class="hamburger" onclick="toggleMobNav()" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -1036,267 +830,346 @@
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="uvod">
-  <div class="hero-line"></div>
+<!-- CATEGORY NAV -->
+<nav class="catnav" id="catnav">
   <div class="wrap">
-    <div class="hero-body">
-      <span class="hero-num">Prodej · Montáž · Servis</span>
-      <h1 class="hero-h1">
-        <span id="tw"></span><span class="cursor" id="cur"></span>
-      </h1>
-      <p class="hero-p">Klimatizace na klíč – rychle, spolehlivě, bez starostí. Reagujeme do 2 hodin, montáž do 48 hodin.</p>
-      <div class="hero-cta">
-        <a href="#kontakt" class="btn btn-primary">Chci poptávku →</a>
-        <a href="#sluzby" class="btn btn-outline">Naše služby</a>
+    <ul class="catnav-list">
+      <li class="catnav-item active">
+        <a href="#produkty" class="catnav-link" onclick="filterCat('all')">
+          Všechny klimatizace
+        </a>
+      </li>
+      <li class="catnav-item">
+        <a href="#produkty" class="catnav-link" onclick="filterCat('split')">
+          Domácí klimatizace
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="cat-dropdown">
+          <a href="#" onclick="filterBrand('Samsung')">Samsung</a>
+          <a href="#" onclick="filterBrand('Daikin')">Daikin</a>
+          <a href="#" onclick="filterBrand('LG')">LG</a>
+          <a href="#" onclick="filterBrand('Mitsubishi')">Mitsubishi</a>
+          <a href="#" onclick="filterBrand('Toshiba')">Toshiba</a>
+          <a href="#" onclick="filterBrand('Fujitsu')">Fujitsu</a>
+        </div>
+      </li>
+      <li class="catnav-item">
+        <a href="#produkty" class="catnav-link" onclick="filterCat('multi')">
+          Multi Split
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="cat-dropdown">
+          <a href="#">2× vnitřní jednotka</a>
+          <a href="#">3× vnitřní jednotka</a>
+          <a href="#">4× vnitřní jednotka</a>
+        </div>
+      </li>
+      <li class="catnav-item">
+        <a href="#produkty" class="catnav-link" onclick="filterCat('teplo')">Tepelná čerpadla</a>
+      </li>
+      <li class="catnav-item">
+        <a href="#kontakt" class="catnav-link">Montáž & Servis</a>
+      </li>
+      <li class="catnav-item" style="margin-left:auto">
+        <a href="#produkty" class="catnav-link sale" onclick="filterBadge('Akce')">🔥 Akce</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag">Léto 2025</div>
+        <h1 class="hero-h1">
+          Klimatizace<br>
+          <em>s montáží v ceně</em>
+        </h1>
+        <p class="hero-sub">
+          Kompletní split klimatizace od <strong style="color:var(--text)">16 900 Kč</strong> včetně profesionální montáže.<br>
+          Doručení do 48 hodin, 3 roky záruky.
+        </p>
+        <div class="hero-actions">
+          <a href="#produkty" class="btn btn-red">Zobrazit nabídku →</a>
+          <a href="#kontakt" class="btn btn-out">Poptávka montáže</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-promo-tags">
+          <span class="promo-tag">Skladem</span>
+          <span class="promo-tag">Montáž 48 h</span>
+          <span class="promo-tag dark">3 roky záruky</span>
+        </div>
+        <svg class="hero-ac-art" viewBox="0 0 360 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Wall shadow -->
+          <rect x="20" y="20" width="320" height="100" rx="16" fill="rgba(123,14,14,0.06)" stroke="rgba(123,14,14,0.25)" stroke-width="1.5"/>
+          <!-- Main body -->
+          <rect x="20" y="20" width="320" height="90" rx="16" fill="rgba(30,22,16,0.8)" stroke="rgba(221,211,198,0.15)" stroke-width="1.5"/>
+          <!-- Top intake grilles -->
+          <line x1="36" y1="34" x2="200" y2="34" stroke="rgba(221,211,198,0.12)" stroke-width="1"/>
+          <line x1="36" y1="40" x2="200" y2="40" stroke="rgba(221,211,198,0.09)" stroke-width="1"/>
+          <line x1="36" y1="46" x2="200" y2="46" stroke="rgba(221,211,198,0.06)" stroke-width="1"/>
+          <!-- Bottom outlet flap -->
+          <path d="M36 100 Q190 114 324 100" stroke="rgba(221,211,198,0.25)" stroke-width="1.5" fill="none"/>
+          <path d="M36 107 Q190 121 324 107" stroke="rgba(221,211,198,0.1)" stroke-width="1" fill="none"/>
+          <!-- Display panel -->
+          <rect x="258" y="32" width="48" height="36" rx="5" fill="rgba(20,14,10,0.9)" stroke="rgba(221,211,198,0.15)" stroke-width="1"/>
+          <!-- Display glow -->
+          <circle cx="282" cy="46" r="6" fill="rgba(123,14,14,0.6)"/>
+          <circle cx="282" cy="46" r="3" fill="rgba(200,20,20,0.8)"/>
+          <!-- Status dots -->
+          <circle cx="268" cy="60" r="2" fill="rgba(74,170,100,0.7)"/>
+          <circle cx="276" cy="60" r="2" fill="rgba(221,211,198,0.2)"/>
+          <!-- Brand text (faint) -->
+          <text x="42" y="70" font-family="'Barlow Condensed', sans-serif" font-weight="800" font-size="28" fill="rgba(221,211,198,0.05)" text-anchor="start" letter-spacing="2">KLIMZONE</text>
+          <!-- Air flow lines -->
+          <path d="M36 120 Q100 132 164 128 Q228 124 292 130 Q310 131 324 128" stroke="rgba(123,14,14,0.4)" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+          <path d="M36 127 Q110 139 190 135 Q260 131 324 135" stroke="rgba(123,14,14,0.2)" stroke-width="1" fill="none" stroke-dasharray="3 4"/>
+        </svg>
       </div>
     </div>
   </div>
-  <div class="hero-scroll-ind">
-    <div class="scroll-bar"></div>
-    <span>Scroll</span>
+</section>
+
+<!-- CATEGORY TILES -->
+<div class="cat-tiles">
+  <div class="wrap">
+    <div class="cat-tiles-grid">
+      <a href="#produkty" class="cat-tile rv" onclick="filterCat('split')">
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="3"/><path d="M6 17v2M18 17v2"/><line x1="6" y1="11" x2="10" y2="11"/><circle cx="17" cy="12" r="2"/></svg>
+        <span class="cat-tile-name">Domácí klimatizace</span>
+        <span class="cat-tile-sub">Split jednotky</span>
+      </a>
+      <a href="#produkty" class="cat-tile rv d1" onclick="filterCat('multi')">
+        <svg viewBox="0 0 24 24"><rect x="1" y="8" width="10" height="7" rx="2"/><rect x="13" y="8" width="10" height="7" rx="2"/><path d="M6 15v2M18 15v2M6 8V6M18 8V6"/></svg>
+        <span class="cat-tile-name">Multi Split</span>
+        <span class="cat-tile-sub">Pro více místností</span>
+      </a>
+      <a href="#produkty" class="cat-tile rv d2" onclick="filterCat('teplo')">
+        <svg viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M16 12h6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg>
+        <span class="cat-tile-name">Tepelná čerpadla</span>
+        <span class="cat-tile-sub">Vzduch–voda</span>
+      </a>
+      <a href="#kontakt" class="cat-tile rv d3">
+        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <span class="cat-tile-name">Montáž & Servis</span>
+        <span class="cat-tile-sub">Profesionálně</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS SECTION -->
+<section class="shop-section" id="produkty">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-head-left">
+        <h2>Klimatizace</h2>
+        <span class="sec-head-count" id="prodCount">12 produktů</span>
+      </div>
+      <a href="#">Zobrazit vše →</a>
+    </div>
+
+    <div class="shop-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar rv" id="sidebar">
+        <!-- Price -->
+        <div class="sidebar-block">
+          <div class="sidebar-head open" onclick="toggleSidebar(this)">
+            Cena
+            <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+          <div class="sidebar-body">
+            <div class="price-range">
+              <div class="price-inputs">
+                <input type="number" id="priceMin" value="0" placeholder="Od">
+                <span class="price-sep">–</span>
+                <input type="number" id="priceMax" value="150000" placeholder="Do">
+              </div>
+              <button class="sidebar-apply" onclick="filterProducts()">Použít filtr</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand -->
+        <div class="sidebar-block">
+          <div class="sidebar-head open" onclick="toggleSidebar(this)">
+            Značka
+            <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+          <div class="sidebar-body">
+            <label class="sb-item"><input type="checkbox" class="brand-cb" value="Samsung" onchange="filterProducts()"> Samsung <span class="count">(3)</span></label>
+            <label class="sb-item"><input type="checkbox" class="brand-cb" value="Daikin" onchange="filterProducts()"> Daikin <span class="count">(2)</span></label>
+            <label class="sb-item"><input type="checkbox" class="brand-cb" value="LG" onchange="filterProducts()"> LG <span class="count">(2)</span></label>
+            <label class="sb-item"><input type="checkbox" class="brand-cb" value="Mitsubishi" onchange="filterProducts()"> Mitsubishi <span class="count">(1)</span></label>
+            <label class="sb-item"><input type="checkbox" class="brand-cb" value="Toshiba" onchange="filterProducts()"> Toshiba <span class="count">(1)</span></label>
+            <label class="sb-item"><input type="checkbox" class="brand-cb" value="Fujitsu" onchange="filterProducts()"> Fujitsu <span class="count">(1)</span></label>
+            <label class="sb-item"><input type="checkbox" class="brand-cb" value="Midea" onchange="filterProducts()"> Midea <span class="count">(2)</span></label>
+          </div>
+        </div>
+
+        <!-- Power -->
+        <div class="sidebar-block">
+          <div class="sidebar-head open" onclick="toggleSidebar(this)">
+            Výkon
+            <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+          <div class="sidebar-body">
+            <label class="sb-item"><input type="checkbox" class="kw-cb" value="2.0-2.9" onchange="filterProducts()"> 2,0 – 2,9 kW</label>
+            <label class="sb-item"><input type="checkbox" class="kw-cb" value="3.0-3.9" onchange="filterProducts()"> 3,0 – 3,9 kW</label>
+            <label class="sb-item"><input type="checkbox" class="kw-cb" value="4.0-5.9" onchange="filterProducts()"> 4,0 – 5,9 kW</label>
+            <label class="sb-item"><input type="checkbox" class="kw-cb" value="6.0-99" onchange="filterProducts()"> 6,0 kW a více</label>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="sidebar-block">
+          <div class="sidebar-head open" onclick="toggleSidebar(this)">
+            Funkce
+            <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+          <div class="sidebar-body">
+            <label class="sb-item"><input type="checkbox" class="feat-cb" value="WiFi" onchange="filterProducts()"> WiFi ovládání</label>
+            <label class="sb-item"><input type="checkbox" class="feat-cb" value="A+++" onchange="filterProducts()"> Třída A+++</label>
+            <label class="sb-item"><input type="checkbox" class="feat-cb" value="Tichý" onchange="filterProducts()"> Tichý provoz</label>
+            <label class="sb-item"><input type="checkbox" class="feat-cb" value="Ionizátor" onchange="filterProducts()"> Ionizátor</label>
+          </div>
+        </div>
+
+        <!-- Stock only -->
+        <div class="sidebar-block">
+          <div class="sidebar-body">
+            <label class="sb-item" style="font-weight:600">
+              <input type="checkbox" id="stockOnly" onchange="filterProducts()"> Pouze skladem
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- PRODUCTS -->
+      <div class="products-area">
+        <div class="products-toolbar rv">
+          <div class="products-count"><strong id="visibleCount">12</strong> produktů</div>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+            <div class="active-filters" id="activeFilters"></div>
+            <select class="sort-select" id="sortSelect" onchange="sortProducts()">
+              <option value="default">Doporučené</option>
+              <option value="price-asc">Nejlevnější</option>
+              <option value="price-desc">Nejdražší</option>
+              <option value="name">Abecedně</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+          <!-- Products rendered by JS -->
+        </div>
+
+        <button class="load-more rv" onclick="loadMore()">Načíst další produkty</button>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats" id="stats">
+<!-- BRANDS -->
+<div class="brands">
   <div class="wrap">
-    <div class="stats-grid">
-      <div class="stat rv">
-        <div class="stat-n" data-target="150" data-suffix="+">0</div>
-        <div class="stat-l">Spokojených zákazníků</div>
+    <div class="brands-inner">
+      <span class="brand-logo">Samsung</span>
+      <span class="brand-logo">Daikin</span>
+      <span class="brand-logo">LG</span>
+      <span class="brand-logo">Mitsubishi</span>
+      <span class="brand-logo">Toshiba</span>
+      <span class="brand-logo">Fujitsu</span>
+      <span class="brand-logo">Midea</span>
+    </div>
+  </div>
+</div>
+
+<!-- USP -->
+<div class="usp">
+  <div class="wrap">
+    <div class="usp-grid rv">
+      <div class="usp-item">
+        <div class="usp-ico"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="usp-txt"><h4>Doprava zdarma</h4><p>Při nákupu nad 3 000 Kč po celé ČR</p></div>
       </div>
-      <div class="stat rv d1">
-        <div class="stat-n" data-target="5" data-suffix="+">0</div>
-        <div class="stat-l">Let zkušeností</div>
+      <div class="usp-item">
+        <div class="usp-ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <div class="usp-txt"><h4>Montáž do 48 h</h4><p>Certifikovaní technici v Praze a okolí</p></div>
       </div>
-      <div class="stat rv d2">
-        <div class="stat-n" data-target="48" data-suffix="h">0h</div>
-        <div class="stat-l">Průměrná montáž</div>
+      <div class="usp-ico-item usp-item">
+        <div class="usp-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="usp-txt"><h4>3 roky záruky</h4><p>Na klimatizaci i montáž</p></div>
       </div>
-      <div class="stat rv d3">
-        <div class="stat-n" data-target="100" data-suffix="%">0%</div>
-        <div class="stat-l">Záruční servis</div>
+      <div class="usp-item">
+        <div class="usp-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="usp-txt"><h4>Podpora 7 dní</h4><p>+420 800 123 456 · Po–Ne 8–20</p></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section class="services" id="sluzby">
+<!-- CONTACT SECTION -->
+<section style="padding:60px 0;background:var(--bg2);border-top:1px solid var(--line)" id="kontakt">
   <div class="wrap">
-    <div class="sec-header rv">
-      <div class="eyebrow">Naše služby</div>
-      <h2 class="sec-title rv d1">Vše pod jednou střechou</h2>
-      <p class="sec-sub rv d2">Od výběru správného zařízení přes instalaci až po dlouhodobý servis.</p>
-    </div>
-    <div class="services-grid">
-      <div class="svc-card rv">
-        <span class="svc-num">01</span>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-        </div>
-        <h3 class="svc-title">Prodej klimatizací</h3>
-        <p class="svc-desc">Nabízíme klimatizace od předních světových značek. Poradíme s výběrem optimální jednotky pro váš prostor a rozpočet.</p>
-        <a href="#kontakt" class="svc-more">Zjistit více →</a>
-      </div>
-      <div class="svc-card rv d1">
-        <span class="svc-num">02</span>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-        </div>
-        <h3 class="svc-title">Profesionální montáž</h3>
-        <p class="svc-desc">Instalace na klíč – rychle, čistě, bez komplikací. Montáž zvládáme do 48 hodin od objednávky.</p>
-        <a href="#kontakt" class="svc-more">Zjistit více →</a>
-      </div>
-      <div class="svc-card rv d2">
-        <span class="svc-num">03</span>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
-        </div>
-        <h3 class="svc-title">Servis a údržba</h3>
-        <p class="svc-desc">Pravidelná údržba, čištění a záruční i pozáruční opravy. Váš komfort je naší prioritou.</p>
-        <a href="#kontakt" class="svc-more">Zjistit více →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="sec-sep"></div>
-
-<!-- WHY US -->
-<section class="why" id="proc-my">
-  <div class="wrap">
-    <div class="why-grid">
-      <div class="why-sticky">
-        <div class="eyebrow rv">Proč KlimZone</div>
-        <h2 class="sec-title rv d1">Klimatizace<br>bez kompromisů</h2>
-        <p class="sec-sub rv d2" style="margin-bottom:0">Vyberte si partnera, na kterého se můžete spolehnout – od prvního hovoru až po roky bezporuchového provozu.</p>
-      </div>
-      <div class="why-items">
-        <div class="why-item rv">
-          <div class="why-num">01</div>
-          <div class="why-txt">
-            <h3>Rychlá reakce a montáž</h3>
-            <p>Odpovídáme do 2 hodin. Montáž zvládáme do 48 hodin – protože váš komfort nesnese zbytečné čekání. <em style="color:var(--faint)">[Doplňte konkrétní detail]</em></p>
-          </div>
-        </div>
-        <div class="why-item rv d1">
-          <div class="why-num">02</div>
-          <div class="why-txt">
-            <h3>Záruka a spolehlivost</h3>
-            <p>Záruční servis přednostně, záruky nad rámec zákonné povinnosti. Stojíme za každou instalací. <em style="color:var(--faint)">[Doplňte konkrétní detail]</em></p>
-          </div>
-        </div>
-        <div class="why-item rv d2">
-          <div class="why-num">03</div>
-          <div class="why-txt">
-            <h3>Zkušenosti a certifikace</h3>
-            <p>5+ let v oboru, certifikovaní technici, přednostní práce s renomovanými značkami. Víme, co funguje. <em style="color:var(--faint)">[Doplňte certifikáty]</em></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="sec-sep"></div>
-
-<!-- PRICING -->
-<section class="pricing" id="cenik">
-  <div class="wrap">
-    <div class="ch">
-      <div class="eyebrow rv">Orientační ceník</div>
-      <h2 class="sec-title rv d1">Transparentní ceny</h2>
-      <p class="sec-sub rv d2">Žádné skryté poplatky. Přesnou cenu dostanete zdarma a bez závazků.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="price-card rv">
-        <div class="price-tier">Základní</div>
-        <div class="price-name">Základ</div>
-        <div class="price-val">od 15 900 Kč</div>
-        <div class="price-note">Montáž + jednotka v ceně</div>
-        <div class="price-divider"></div>
-        <ul class="price-feats">
-          <li>Split klimatizace 2,5 kW</li>
-          <li>Standardní montáž (do 5 m)</li>
-          <li>2 roky záruky</li>
-          <li>Telefonická podpora</li>
-          <li>Uvedení do provozu</li>
-        </ul>
-        <a href="#kontakt" class="price-cta cta-out">Poptávka zdarma</a>
-      </div>
-      <div class="price-card feat rv d1">
-        <div class="feat-tag">Nejoblíbenější</div>
-        <div class="price-tier">Komfort</div>
-        <div class="price-name">Komfort</div>
-        <div class="price-val">od 24 900 Kč</div>
-        <div class="price-note">Montáž + jednotka v ceně</div>
-        <div class="price-divider"></div>
-        <ul class="price-feats">
-          <li>Split klimatizace 3,5 kW</li>
-          <li>Nadstandardní montáž (do 10 m)</li>
-          <li>3 roky záruky</li>
-          <li>Prioritní servis</li>
-          <li>1× roční prohlídka</li>
-          <li>Kompletní uvedení do provozu</li>
-        </ul>
-        <a href="#kontakt" class="price-cta cta-fill">Chci Komfort</a>
-      </div>
-      <div class="price-card rv d2">
-        <div class="price-tier">Premium</div>
-        <div class="price-name">Premium</div>
-        <div class="price-val">Na míru</div>
-        <div class="price-note">Individuální nabídka</div>
-        <div class="price-divider"></div>
-        <ul class="price-feats">
-          <li>Multi-split / VRF systémy</li>
-          <li>Individuální projekt a návrh</li>
-          <li>5 let záruky</li>
-          <li>VIP servisní smlouva</li>
-          <li>Pravidelná péče</li>
-          <li>Prioritní výjezd 24/7</li>
-        </ul>
-        <a href="#kontakt" class="price-cta cta-out">Konzultace zdarma</a>
-      </div>
-    </div>
-    <div class="pricing-note rv">
-      <strong>Cena závisí na konkrétní situaci</strong> – délce trubkové trasy, složitosti montáže a výkonu jednotky. Poptejte nás a dostanete přesnou nabídku <strong>zdarma a bez závazků</strong>.
-    </div>
-  </div>
-</section>
-
-<div class="sec-sep"></div>
-
-<!-- CONTACT -->
-<section class="contact" id="kontakt">
-  <div class="wrap">
-    <div class="contact-grid">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start" class="rv">
       <div>
-        <div class="eyebrow rv">Kontaktujte nás</div>
-        <h2 class="sec-title rv d1">Poptejte<br>nezávazně</h2>
-        <p class="sec-sub rv d2" style="margin-bottom:2rem">Vyplňte formulář a ozveme se do 2 pracovních hodin s odpovědí a orientační cenou.</p>
-        <form class="c-form rv d2" id="cForm" action="https://formspree.io/f/XXXXXXXX" method="POST">
-          <div class="form-row">
-            <div class="fg">
-              <label for="name">Jméno a příjmení *</label>
-              <input type="text" id="name" name="name" placeholder="Jan Novák" required>
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red-h);margin-bottom:10px">Kontakt & Poptávka</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:800;text-transform:uppercase;margin-bottom:10px">Nezávazná<br>poptávka</h2>
+        <p style="font-size:.9rem;color:var(--muted);margin-bottom:24px;line-height:1.65">Ozveme se do 2 hodin s cenou a termínem.</p>
+        <form id="cForm" action="https://formspree.io/f/XXXXXXXX" method="POST" style="background:var(--bg3);border:1px solid var(--line);border-top:2px solid var(--red);padding:28px 24px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div style="margin-bottom:12px">
+              <label style="display:block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Jméno *</label>
+              <input type="text" name="name" placeholder="Jan Novák" required style="width:100%;background:rgba(255,255,255,.025);border:1px solid var(--line);color:var(--text);font-family:'Barlow',sans-serif;font-size:.88rem;padding:10px 12px;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='var(--red)'" onblur="this.style.borderColor=''">
             </div>
-            <div class="fg">
-              <label for="phone">Telefon *</label>
-              <input type="tel" id="phone" name="phone" placeholder="+420 777 123 456" required>
+            <div style="margin-bottom:12px">
+              <label style="display:block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Telefon *</label>
+              <input type="tel" name="phone" placeholder="+420 777 123 456" required style="width:100%;background:rgba(255,255,255,.025);border:1px solid var(--line);color:var(--text);font-family:'Barlow',sans-serif;font-size:.88rem;padding:10px 12px;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='var(--red)'" onblur="this.style.borderColor=''">
             </div>
           </div>
-          <div class="fg">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="jan.novak@email.cz">
+          <div style="margin-bottom:12px">
+            <label style="display:block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">E-mail</label>
+            <input type="email" name="email" placeholder="jan@email.cz" style="width:100%;background:rgba(255,255,255,.025);border:1px solid var(--line);color:var(--text);font-family:'Barlow',sans-serif;font-size:.88rem;padding:10px 12px;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='var(--red)'" onblur="this.style.borderColor=''">
           </div>
-          <div class="fg">
-            <label for="msg">Zpráva</label>
-            <textarea id="msg" name="message" placeholder="Poptávka klimatizace – typ prostoru, plocha, počet místností…"></textarea>
+          <div style="margin-bottom:16px">
+            <label style="display:block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Zpráva</label>
+            <textarea name="message" rows="3" placeholder="Typ prostoru, plocha, poptávaná klimatizace…" style="width:100%;background:rgba(255,255,255,.025);border:1px solid var(--line);color:var(--text);font-family:'Barlow',sans-serif;font-size:.88rem;padding:10px 12px;outline:none;resize:vertical;transition:border-color .2s" onfocus="this.style.borderColor='var(--red)'" onblur="this.style.borderColor=''"></textarea>
           </div>
-          <div class="f-check">
-            <input type="checkbox" id="gdpr" name="gdpr" required>
-            <label for="gdpr">Souhlasím se zpracováním osobních údajů dle <a href="#">zásad ochrany osobních údajů</a>.</label>
+          <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:14px">
+            <input type="checkbox" required style="margin-top:2px;accent-color:var(--red)">
+            <span style="font-size:.76rem;color:var(--faint)">Souhlasím se zpracováním osobních údajů.</span>
           </div>
-          <button type="submit" class="f-submit" id="fBtn">Odeslat poptávku →</button>
+          <button type="submit" id="fBtn" style="width:100%;background:var(--red);border:1px solid var(--red);color:#fff;font-family:'Barlow',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:13px;cursor:pointer;transition:background .2s">Odeslat poptávku →</button>
         </form>
       </div>
-
-      <div class="c-info rv d1">
-        <div class="c-info-title">Jsme tu pro vás</div>
-        <p class="c-info-sub">Praha a Středočeský kraj. Na poptávku reagujeme do 2 hodin v pracovní dny.</p>
-
-        <div class="c-detail">
-          <div class="c-ico">
-            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <div>
+        <div style="margin-bottom:24px">
+          <div style="font-size:.66rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:16px">Kontaktní údaje</div>
+          <div style="display:flex;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)">
+            <div style="width:38px;height:38px;border:1px solid rgba(123,14,14,.3);background:rgba(123,14,14,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--red-h)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div><div style="font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px">Telefon</div><a href="tel:+420800123456" style="color:var(--text);font-weight:600">+420 800 123 456</a></div>
           </div>
-          <div class="c-detail-txt">
-            <strong>Telefon</strong>
-            <a href="tel:+420XXXXXXXXX">+420 XXX XXX XXX</a>
+          <div style="display:flex;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)">
+            <div style="width:38px;height:38px;border:1px solid rgba(123,14,14,.3);background:rgba(123,14,14,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--red-h)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div><div style="font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px">E-mail</div><a href="mailto:info@klimzone.cz" style="color:var(--text);font-weight:600">info@klimzone.cz</a></div>
           </div>
-        </div>
-        <div class="c-detail">
-          <div class="c-ico">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div class="c-detail-txt">
-            <strong>E-mail</strong>
-            <a href="mailto:info@klimzone.cz">info@klimzone.cz</a>
-          </div>
-        </div>
-        <div class="c-detail">
-          <div class="c-ico">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/></svg>
-          </div>
-          <div class="c-detail-txt">
-            <strong>Oblast</strong>
-            <span>Praha a Středočeský kraj</span>
+          <div style="display:flex;gap:12px;align-items:center;padding:16px 0">
+            <div style="width:38px;height:38px;border:1px solid rgba(123,14,14,.3);background:rgba(123,14,14,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--red-h)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/></svg>
+            </div>
+            <div><div style="font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px">Oblast</div><span style="color:var(--text);font-weight:600">Praha a Středočeský kraj</span></div>
           </div>
         </div>
-
-        <div class="c-promise">
-          „Každá poptávka dostane odpověď do 2 pracovních hodin. Konzultace i výjezd na prohlídku je zdarma."
+        <div style="background:rgba(123,14,14,.07);border-left:3px solid var(--red);padding:14px 16px;font-size:.84rem;color:var(--muted);font-style:italic;line-height:1.6">
+          „Odpovídáme do 2 pracovních hodin. Výjezd na prohlídku a nabídka zdarma."
         </div>
       </div>
     </div>
@@ -1306,124 +1179,312 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
-    <div class="footer-top">
+    <div class="footer-grid">
       <div>
         <a href="#" class="f-logo">Klim<em>Zone</em></a>
-        <p class="f-desc">Profesionální prodej, montáž a servis klimatizací. Od první konzultace přes instalaci až po dlouhodobý servis.</p>
+        <p class="f-desc">Největší výběr klimatizací online. Prodej, montáž a servis – Samsung, Daikin, LG a další přední značky.</p>
         <div class="socials">
-          <a href="#" class="soc" aria-label="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="#" class="soc" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="#" class="soc" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
+          <a href="#" class="soc"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="soc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="soc"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
         </div>
       </div>
       <div>
-        <div class="f-heading">Navigace</div>
+        <div class="f-head">Kategorie</div>
         <ul class="f-links">
-          <li><a href="#sluzby">Služby</a></li>
-          <li><a href="#proc-my">Proč KlimZone</a></li>
-          <li><a href="#cenik">Ceník</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#">Domácí klimatizace</a></li>
+          <li><a href="#">Multi Split</a></li>
+          <li><a href="#">Tepelná čerpadla</a></li>
+          <li><a href="#">Příslušenství</a></li>
         </ul>
       </div>
       <div>
-        <div class="f-heading">Kontakt</div>
+        <div class="f-head">Zákaznický servis</div>
         <ul class="f-links">
-          <li><a href="tel:+420XXXXXXXXX">+420 XXX XXX XXX</a></li>
-          <li><a href="mailto:info@klimzone.cz">info@klimzone.cz</a></li>
-          <li><a href="#">Praha a Středočeský kraj</a></li>
+          <li><a href="#">Doprava a platba</a></li>
+          <li><a href="#">Reklamace</a></li>
+          <li><a href="#">Záruka a servis</a></li>
+          <li><a href="#">Montáž</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="f-head">Informace</div>
+        <ul class="f-links">
+          <li><a href="#">O nás</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#">Provozovny</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="f-copy">&copy; 2025 KlimZone. Všechna práva vyhrazena.</div>
-      <div class="f-legal">
+    <div class="footer-bot">
+      <span class="footer-bot-copy">&copy; 2025 KlimZone s.r.o. Všechna práva vyhrazena.</span>
+      <div class="footer-bot-links">
         <a href="#">Ochrana osobních údajů</a>
         <a href="#">Obchodní podmínky</a>
+        <a href="#">Cookies</a>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- SCRIPTS -->
 <script>
-  // Nav scroll
-  const navEl = document.getElementById('nav');
-  window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', scrollY > 40), {passive:true});
+// ── PRODUCTS DATA ──
+const PRODUCTS = [
+  {id:1,brand:'Samsung',model:'WindFree™ Comfort S2',kw:2.5,tags:['WiFi','A+++','Tichý'],price:18900,priceND:15620,stock:true,badge:'Bestseller',cat:'split'},
+  {id:2,brand:'Daikin',model:'Perfera FTXM25R',kw:2.5,tags:['WiFi','A+++','Ionizátor'],price:24900,priceND:20579,stock:true,badge:null,cat:'split'},
+  {id:3,brand:'LG',model:'Dual Cool S4-W09JE2',kw:2.5,tags:['WiFi','A++','ThinQ'],price:19900,priceND:16446,stock:true,badge:'Akce',cat:'split'},
+  {id:4,brand:'Mitsubishi',model:'MSZ-HR25VF',kw:2.5,tags:['A++','Eco','Tichý'],price:21900,priceND:18099,stock:true,badge:null,cat:'split'},
+  {id:5,brand:'Toshiba',model:'Seiya RAS-B10J2KVG',kw:2.6,tags:['Tichý','A++'],price:16900,priceND:13967,stock:true,badge:'Výhodná cena',cat:'split'},
+  {id:6,brand:'Fujitsu',model:'KG ASYG09KETA',kw:2.5,tags:['WiFi','A+++'],price:22900,priceND:18926,stock:false,badge:null,cat:'split'},
+  {id:7,brand:'Samsung',model:'WindFree™ Elite AC071',kw:6.8,tags:['WiFi','A+++','WindFree'],price:38900,priceND:32149,stock:true,badge:'Výkon',cat:'split'},
+  {id:8,brand:'Daikin',model:'Stylish FTXA20AW',kw:2.0,tags:['WiFi','A+++','Design'],price:32900,priceND:27190,stock:true,badge:'Design',cat:'split'},
+  {id:9,brand:'Midea',model:'Blanc MSMAD-09HRDN8',kw:2.6,tags:['WiFi','A++'],price:14900,priceND:12314,stock:true,badge:'Nejlevnější',cat:'split'},
+  {id:10,brand:'Samsung',model:'Multi AJ052TXJ 2×2,5kW',kw:3.5,tags:['WiFi','Multi'],price:48900,priceND:40413,stock:true,badge:null,cat:'multi'},
+  {id:11,brand:'Daikin',model:'2MXM40N Multi 2×2kW',kw:3.0,tags:['WiFi','A+++','Multi'],price:52900,priceND:43719,stock:true,badge:null,cat:'multi'},
+  {id:12,brand:'Midea',model:'M2OE-18HFN8 Multi 2×2,5kW',kw:3.5,tags:['WiFi','Multi'],price:42900,priceND:35455,stock:false,badge:'Multi',cat:'multi'},
+];
 
-  // Mobile menu
-  function openMob() { document.getElementById('mobMenu').classList.add('open'); document.body.style.overflow='hidden'; }
-  function closeMob() { document.getElementById('mobMenu').classList.remove('open'); document.body.style.overflow=''; }
+// ── CART ──
+let cart = JSON.parse(localStorage.getItem('kz_cart')||'[]');
 
-  // Typewriter
-  const twText = 'Klimatizace, které fungují. Přesně tam, kde je potřebujete.';
-  const twEl = document.getElementById('tw');
-  const curEl = document.getElementById('cur');
-  let ti = 0;
-  function type() {
-    if (ti < twText.length) {
-      twEl.textContent += twText[ti++];
-      setTimeout(type, ti < 20 ? 60 : 42);
-    } else {
-      setTimeout(() => curEl.classList.add('off'), 1600);
-    }
+function saveCart(){ localStorage.setItem('kz_cart', JSON.stringify(cart)); }
+
+function addToCart(id){
+  const p = PRODUCTS.find(x=>x.id===id);
+  if(!p) return;
+  const ex = cart.find(x=>x.id===id);
+  if(ex) ex.qty++;
+  else cart.push({id:p.id,brand:p.brand,model:p.model,price:p.price,qty:1});
+  saveCart();
+  updateBadge();
+  showToast(p.brand+' '+p.model);
+}
+
+function updateBadge(){
+  const total = cart.reduce((s,x)=>s+x.qty,0);
+  const b = document.getElementById('cartBadge');
+  b.textContent = total;
+  b.style.display = total>0 ? 'flex':'none';
+}
+
+function showToast(name){
+  const t = document.getElementById('toast');
+  document.getElementById('toast-name').textContent = name;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+function openCart(){
+  renderCart();
+  document.getElementById('cartDrawer').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCart(){
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function changeQty(id,delta){
+  const item = cart.find(x=>x.id===id);
+  if(!item) return;
+  item.qty += delta;
+  if(item.qty<=0) cart = cart.filter(x=>x.id!==id);
+  saveCart();
+  updateBadge();
+  renderCart();
+}
+
+function renderCart(){
+  const el = document.getElementById('cartItems');
+  const foot = document.getElementById('cartFoot');
+  const head = document.getElementById('cartHeadCount');
+  const total = cart.reduce((s,x)=>s+x.qty,0);
+  head.textContent = total ? `(${total})` : '';
+  if(!cart.length){
+    el.innerHTML='<div class="cart-empty">Košík je prázdný</div>';
+    foot.style.display='none'; return;
   }
-  setTimeout(type, 600);
+  foot.style.display='block';
+  const sum = cart.reduce((s,x)=>s+(x.price*x.qty),0);
+  document.getElementById('cartTotal').textContent = sum.toLocaleString('cs-CZ')+' Kč';
+  const acSVG = `<svg viewBox="0 0 80 36" fill="none" stroke="rgba(221,211,198,.35)" stroke-width="1.2"><rect x="3" y="6" width="74" height="24" rx="5"/><path d="M8 22 Q40 28 72 22"/><rect x="57" y="9" width="14" height="10" rx="2"/><circle cx="64" cy="14" r="2" fill="rgba(221,211,198,.3)"/></svg>`;
+  el.innerHTML = cart.map(x=>`
+    <div class="cart-item">
+      <div class="cart-item-img">${acSVG}</div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${x.brand} ${x.model}</div>
+        <div class="cart-item-price">${x.price.toLocaleString('cs-CZ')} Kč</div>
+        <div class="cart-item-qty">
+          <button class="qty-btn" onclick="changeQty(${x.id},-1)">−</button>
+          <span class="qty-val">${x.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${x.id},1)">+</button>
+          <button class="cart-item-remove" onclick="changeQty(${x.id},-99)" title="Odebrat">✕</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
 
-  // Scroll reveal
-  const rvObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); rvObs.unobserve(e.target); } });
-  }, { threshold: 0.08, rootMargin:'0px 0px -32px 0px' });
-  document.querySelectorAll('.rv').forEach(el => rvObs.observe(el));
+// ── RENDER PRODUCTS ──
+const acSVGSmall = `<svg class="prod-ac-svg" viewBox="0 0 160 70" fill="none" stroke="rgba(221,211,198,0.3)" stroke-width="1.3" stroke-linecap="round"><rect x="5" y="12" width="150" height="42" rx="8"/><line x1="14" y1="22" x2="88" y2="22" stroke-opacity=".5"/><line x1="14" y1="27" x2="88" y2="27" stroke-opacity=".35"/><line x1="14" y1="32" x2="88" y2="32" stroke-opacity=".2"/><path d="M14 46 Q82 53 146 46"/><rect x="104" y="17" width="22" height="16" rx="3"/><circle cx="115" cy="23" r="3" fill="rgba(221,211,198,.2)"/><circle cx="115" cy="23" r="1.5" fill="rgba(200,30,30,.5)"/></svg>`;
 
-  // Counter
-  function countUp(el) {
-    const target = +el.dataset.target, suffix = el.dataset.suffix||'', dur = 1800, t0 = performance.now();
-    const run = now => {
-      const p = Math.min((now-t0)/dur,1), ep = 1-Math.pow(1-p,3);
-      el.textContent = Math.floor(ep*target)+suffix;
-      if (p<1) requestAnimationFrame(run);
-    };
-    requestAnimationFrame(run);
+const badgeColors = {Bestseller:'',Akce:'',Design:'brown',Multi:'brown','Výkon':'brown','Výhodná cena':'brown','Nejlevnější':'green'};
+
+function renderProducts(list){
+  const grid = document.getElementById('productsGrid');
+  if(!list.length){
+    grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Žádné produkty nevyhovují zvoleným filtrům.</div>';
+    return;
   }
-  let counted = false;
-  new IntersectionObserver(([e]) => {
-    if (e.isIntersecting && !counted) { counted=true; document.querySelectorAll('.stat-n').forEach(countUp); }
-  }, {threshold:.3}).observe(document.getElementById('stats'));
+  grid.innerHTML = list.map(p=>`
+    <div class="prod-card rv" data-id="${p.id}" data-brand="${p.brand}" data-kw="${p.kw}" data-cat="${p.cat}" data-tags="${p.tags.join(',')}" data-price="${p.price}">
+      <div class="prod-img">
+        <span class="prod-brand-wm">${p.brand}</span>
+        ${acSVGSmall}
+        ${p.badge?`<span class="prod-badge ${badgeColors[p.badge]||''}">${p.badge}</span>`:''}
+      </div>
+      <div class="prod-body">
+        <div class="prod-tags">
+          <span class="prod-tag">${p.kw} kW</span>
+          ${p.tags.map(t=>`<span class="prod-tag${t==='WiFi'?' red':''}">${t}</span>`).join('')}
+        </div>
+        <h3 class="prod-name">${p.brand} ${p.model}</h3>
+        <div class="prod-stock ${p.stock?'in':'out'}">${p.stock?'Skladem':'Dostupné brzy'}</div>
+        <div class="prod-price">
+          <div class="prod-price-nodph">${p.priceND.toLocaleString('cs-CZ')} Kč bez DPH</div>
+          <div class="prod-price-dph">${p.price.toLocaleString('cs-CZ')} Kč</div>
+        </div>
+        <button class="prod-cart-btn" onclick="addToCart(${p.id})">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Do košíku
+        </button>
+      </div>
+    </div>`).join('');
 
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
-    });
-  });
+  // re-observe for rv
+  document.querySelectorAll('.prod-card.rv:not(.vis)').forEach(el=>rvObs.observe(el));
+  document.getElementById('visibleCount').textContent = list.length;
+}
 
-  // Form
-  const form = document.getElementById('cForm'), fBtn = document.getElementById('fBtn');
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const orig = fBtn.innerHTML;
-    fBtn.textContent = 'Odesílám…'; fBtn.disabled = true;
-    try {
-      const r = await fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}});
-      if (r.ok) {
-        fBtn.textContent = '✓ Poptávka odeslána!';
-        fBtn.style.background = '#1a3d24';
-        form.reset();
-        setTimeout(() => { fBtn.innerHTML=orig; fBtn.style.background=''; fBtn.disabled=false; }, 4000);
-      } else throw 0;
-    } catch {
-      fBtn.textContent = 'Chyba – zkuste znovu';
-      fBtn.style.background = '#3d1a1a';
-      setTimeout(() => { fBtn.innerHTML=orig; fBtn.style.background=''; fBtn.disabled=false; }, 3000);
+// ── FILTER STATE ──
+let activeCat = 'all';
+let activeBrand = null;
+let activeBadge = null;
+
+function getFiltered(){
+  const brands = [...document.querySelectorAll('.brand-cb:checked')].map(x=>x.value);
+  const kws = [...document.querySelectorAll('.kw-cb:checked')].map(x=>x.value);
+  const feats = [...document.querySelectorAll('.feat-cb:checked')].map(x=>x.value);
+  const stockOnly = document.getElementById('stockOnly').checked;
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  const minP = +document.getElementById('priceMin').value||0;
+  const maxP = +document.getElementById('priceMax').value||999999;
+
+  return PRODUCTS.filter(p=>{
+    if(activeCat!=='all' && p.cat!==activeCat) return false;
+    if(activeBrand && p.brand!==activeBrand) return false;
+    if(activeBadge && p.badge!==activeBadge) return false;
+    if(brands.length && !brands.includes(p.brand)) return false;
+    if(stockOnly && !p.stock) return false;
+    if(p.price<minP||p.price>maxP) return false;
+    if(feats.length && !feats.every(f=>p.tags.includes(f))) return false;
+    if(kws.length){
+      const match = kws.some(r=>{
+        const [lo,hi]=r.split('-').map(Number);
+        return p.kw>=lo && p.kw<=hi;
+      });
+      if(!match) return false;
     }
+    if(search && !(p.brand.toLowerCase().includes(search)||p.model.toLowerCase().includes(search))) return false;
+    return true;
   });
+}
+
+function filterProducts(){
+  activeBrand=null; activeBadge=null;
+  renderProducts(sortList(getFiltered()));
+  updateActiveFilters();
+}
+function filterCat(cat){
+  activeCat=cat; activeBrand=null; activeBadge=null;
+  renderProducts(sortList(getFiltered()));
+  updateActiveFilters();
+}
+function filterBrand(brand){
+  activeCat='all'; activeBrand=brand; activeBadge=null;
+  renderProducts(sortList(getFiltered()));
+  updateActiveFilters();
+  event.preventDefault();
+}
+function filterBadge(badge){
+  activeCat='all'; activeBrand=null; activeBadge=badge;
+  renderProducts(sortList(getFiltered()));
+  updateActiveFilters();
+}
+
+function sortList(list){
+  const v = document.getElementById('sortSelect').value;
+  if(v==='price-asc') return [...list].sort((a,b)=>a.price-b.price);
+  if(v==='price-desc') return [...list].sort((a,b)=>b.price-a.price);
+  if(v==='name') return [...list].sort((a,b)=>(a.brand+a.model).localeCompare(b.brand+b.model));
+  return list;
+}
+function sortProducts(){ renderProducts(sortList(getFiltered())); }
+
+function updateActiveFilters(){
+  const el = document.getElementById('activeFilters');
+  const tags=[];
+  if(activeCat!=='all') tags.push({label:'Kategorie: '+activeCat,clear:()=>{activeCat='all';filterProducts();}});
+  if(activeBrand) tags.push({label:activeBrand,clear:()=>{activeBrand=null;filterProducts();}});
+  el.innerHTML = tags.map((t,i)=>`<span class="filter-tag" onclick="(${t.clear.toString()})()">${t.label} ✕</span>`).join('');
+}
+
+function loadMore(){ /* placeholder */ alert('Načítání dalších produktů…'); }
+
+// ── SIDEBAR TOGGLE ──
+function toggleSidebar(head){
+  head.classList.toggle('open');
+  const body = head.nextElementSibling;
+  body.style.display = head.classList.contains('open') ? 'block':'none';
+}
+
+// ── MOB NAV ──
+function toggleMobNav(){
+  document.getElementById('catnav').classList.toggle('mob-open');
+}
+
+// ── SCROLL REVEAL ──
+const rvObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('vis');rvObs.unobserve(e.target);} });
+},{threshold:0.05,rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
+
+// ── FORM ──
+const cForm=document.getElementById('cForm');
+cForm.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const btn=document.getElementById('fBtn'),orig=btn.innerHTML;
+  btn.textContent='Odesílám…'; btn.disabled=true;
+  try{
+    const r=await fetch(cForm.action,{method:'POST',body:new FormData(cForm),headers:{'Accept':'application/json'}});
+    if(r.ok){btn.textContent='✓ Odesláno!';btn.style.background='#1a3d24';cForm.reset();setTimeout(()=>{btn.innerHTML=orig;btn.style.background='';btn.disabled=false;},4000);}
+    else throw 0;
+  }catch{btn.textContent='Chyba';btn.style.background='#3d1a1a';setTimeout(()=>{btn.innerHTML=orig;btn.style.background='';btn.disabled=false;},3000);}
+});
+
+// ── SMOOTH SCROLL ──
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+
+// ── INIT ──
+updateBadge();
+renderProducts(PRODUCTS);
 </script>
 </body>
 </html>
